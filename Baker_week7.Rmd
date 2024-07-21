@@ -1,0 +1,45 @@
+---
+title: "Baker_week7"
+output: html_document
+date: "2024-07-12"
+---
+
+```{r question_1a}
+f <- 35
+celcius <- (f-32)*5/9
+print(celcius)
+```
+
+```{r question_1b}
+vals <- c(35,45,55,65,75,85,95)
+for (temps in vals ) {
+  celcius <- (temps-32)*5/9
+  print(celcius)
+}
+```
+
+```{r question_1c}
+for (temps in vals ) {
+  celcius <- (temps-32)*5/9
+  if(celcius<=18){
+    print(paste(temps, "Don't forget a coat!"))
+  }
+  else if(celcius>18){
+    print(paste(temps, "No need for a coat."))
+  }
+}
+```
+
+```{r question_1d}
+for (temps in vals ) {
+  celcius <- (temps-32)*5/9
+  if(celcius<18){
+    print(paste(temps, "Don't forget a coat!"))
+  }
+  else if(celcius>=23){
+    print(paste(temps, "We recommend wearing shorts."))
+  }
+  else if(celcius>18|celcius<23){print(paste(temps,"Neither shorts nor a coat is required."))
+  }
+}
+```

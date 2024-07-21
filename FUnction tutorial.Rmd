@@ -1,0 +1,59 @@
+---
+title: "Function tutorial"
+output: html_document
+date: "2024-06-24"
+---
+# **Function 1**
+### **flashr::create_deck()**
+##### The first function is _create_deck_ from the package **flashr**, it is used to create a flash card that contains functions in R for studying.
+##### Using the function _create_deck_ you can name the card deck and add cards to the pile. Once run, you should see your flash card deck in the viewer pane. Click the blue triangles to move through the pile.
+##### You can include the "fontcolor= 'color'" argument to change the color of the text on the flash card. You can also remove the package name from the front of flash cards with the argument "package=FALSE".To save the deck use the "file= 'file_name'" arguments.
+### Example:
+```{r load_package, include=FALSE}
+library(flashr)
+```
+
+```{r function_1, eval=FALSE}
+#Create an object with the functions you want to study.
+r_functions <- c("filter()","select()", "mutate()")
+create_deck(x=r_functions, title = "Dplyr Functions", fontcolor = "red", package = FALSE, file="test_deck.html")
+```
+![](filter flash card.png)
+
+![](back of flash card.png)
+
+# **Function 2**
+### **flashr::choose_deck()**
+##### The second function is _choose_deck_ from the **flashr** package. This function allows you to chose a deck from your repo on GitHub once you have saved and posted the flash card deck.
+##### The only arguments we need is "repo=username/repository" and "pattern= 'deck_name'".
+### Example:
+```{r Function_2, eval=FALSE}
+#Using the choose_deck function to select a flash card deck from the GitHub folder of the creater of flashr.
+choose_deck(repo= "JeffreyRSTevens/flashr_decks", pattern="r4ds7")
+[Creaters repository deck]()
+```
+[Creaters repository deck](https://github.com/JeffreyRStevens/flashr_decks)
+
+```{r echo=FALSE}
+flashdata <- read.csv("r4ds7.csv")
+head(flashdata[1:2])
+```
+
+
+
+
+# **Function 3**
+### **supportR::count()**
+##### The function _count()_ is from the package **supportR**. _Count()_ is used to count the number of times an element occurs in a vector. NA values can also be recognized and accounted.
+
+### Example:
+```{r load_package2, include=FALSE}
+library(supportR)
+```
+
+```{r Function_3}
+#Create an object for the count function of a vector of values/elements.
+vec_1 <- count(vec= c("flower",4,"flower",10, 4, NA) )
+#Run the object name to obtain a table with the values of occurence of the elements in the vector. 
+vec_1
+```
